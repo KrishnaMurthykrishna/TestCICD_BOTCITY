@@ -5,6 +5,7 @@ from botcity.maestro import (  # noqa: E402
     AutomationTaskFinishStatus,
 )
 
+from HTTP_API_Examples import main as http_api_main  # noqa: E402
 # Disable errors if we are not connected to Maestro
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
 
@@ -20,6 +21,10 @@ def main():
     print(f"Task Parameters are: {execution.parameters}")  # noqa: T201
     print("starting...")
     maestro.alert(task_id=execution.task_id, title="Example Bot started!", message="The bot has started its execution.", alert_type=AlertType.INFO)
+
+    # Here you can call your main.py file or implement your bot's logic
+    http_api_main()
+    # Uncomment to mark this task as finished on BotMaestro
     maestro.finish_task(
         task_id=execution.task_id,
         status=AutomationTaskFinishStatus.SUCCESS,
