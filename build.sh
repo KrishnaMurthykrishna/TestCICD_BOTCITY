@@ -1,4 +1,3 @@
-#!/bin/bash
-
-echo "Zipping bot files..."
-zip -r maestro.zip . -x "*.git*" "maestro.zip"
+$exclude = @("venv", "maestro.zip")
+$files = Get-ChildItem -Path . -Exclude $exclude
+Compress-Archive -Path $files -DestinationPath "maestro.zip" -Force
