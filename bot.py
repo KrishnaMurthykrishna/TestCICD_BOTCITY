@@ -20,6 +20,7 @@ def main():
     print(f"Task ID is: {execution.task_id}")  # noqa: T201
     print(f"Task Parameters are: {execution.parameters}")  # noqa: T201
     print("starting... Testing .. thanks")
+    print("Test 121133 CI CD BOT CITY Project")
     maestro.alert(task_id=execution.task_id, title="Example Bot started!", message="The bot has started its execution.", alert_type=AlertType.INFO)
 
     # Here you can call your main.py file or implement your bot's logic
